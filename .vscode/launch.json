@@ -1,0 +1,33 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": ".NET Core Launch (console)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            // If you have changed target frameworks, make sure to update the program path.
+            "program": "${workspaceFolder}/src/Azure.Functions.Cli/bin/Debug/netcoreapp2.2/func.dll",
+            "env": {
+                "CLI_DEBUG": "1"
+            },
+            "args": "${input:funcArgs}",
+            "cwd": "${workspaceFolder}/src/Azure.Functions.Cli",
+            "console": "internalConsole",
+            "stopAtEntry": false
+        },
+        {
+            "name": ".NET Core Attach",
+            "type": "coreclr",
+            "request": "attach"
+        }
+    ],
+    "inputs": [
+        {
+            "id": "funcArgs",
+            "type": "promptString",
+            "description": "Args to pass to the 'func' command",
+            "default": "--version"
+        }
+    ]
+}
